@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+use Core\Router;
 
-<body>
-  <h1>PHP Contact Form</h1>
-</body>
+const BASE_PATH = __DIR__ . "/../";
 
-</html>
+require BASE_PATH . '/vendor/autoload.php';
+require BASE_PATH . '/Core/function.php';
+
+$router = new Router();
+require(base_path('routes.php'));
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+
+$router->route($uri, $method);
