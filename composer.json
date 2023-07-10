@@ -1,0 +1,10 @@
+{
+    "name": "hp/contactform-php",
+    "require": {},
+    "autoload" : {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
