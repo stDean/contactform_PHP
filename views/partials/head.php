@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles.css">
 
-  <!-- icon style link -->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/1780644c71.js" crossorigin="anonymous"></script>
 
   <!-- Font Link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
