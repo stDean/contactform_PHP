@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 require base_path('/views/partials/head.php');
 
 ?>
@@ -9,7 +11,7 @@ require base_path('/views/partials/head.php');
     <div class="form login">
       <span class="title">LogIn</span>
 
-      <form action="#">
+      <form action="/session" method="POST">
         <div class="input-field">
           <input type="email" name="email" placeholder="Enter your Email">
           <i class="fa-solid fa-envelope icon"></i>
@@ -31,7 +33,7 @@ require base_path('/views/partials/head.php');
         </div>
 
         <div class="input-field button">
-          <input type="button" value="Login Now">
+          <input type="submit" value="Login Now">
         </div>
       </form>
 
@@ -44,7 +46,6 @@ require base_path('/views/partials/head.php');
     <!-- Registration Form -->
     <div class="form signup">
       <span class="title">Register</span>
-
       <form action="/register" class="signUp" method="POST">
         <div class="input-field <?= isset($errors['name']) ? 'error' : '' ?>">
           <input type="name" name="name" placeholder="Enter your Name" id="user-input">
@@ -89,15 +90,6 @@ require base_path('/views/partials/head.php');
           <i class="fa-solid fa-circle-exclamation exclaim"></i>
 
           <small class="error">This is the error</small>
-        </div>
-
-        <div class="checkbox-text">
-          <div class="checkbox-content">
-            <input type="checkbox" name="remember" id="logCheck">
-            <label for="logCheck" class="text">Remember me</label>
-          </div>
-
-          <a href="#" class="text">Forgot Password?</a>
         </div>
 
         <div class="input-field button">

@@ -26,3 +26,5 @@ try {
 
   return redirect($router->previousUrl());
 }
+
+Session::unFlash();
