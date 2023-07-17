@@ -29,8 +29,6 @@ class RegForm extends Form
   public static function validate($attributes)
   {
     $instance = new static($attributes);
-    // dd($instance);
-
     return $instance->failed() ? $instance->throw() : $instance;
   }
 }

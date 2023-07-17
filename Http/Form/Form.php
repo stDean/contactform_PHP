@@ -12,7 +12,7 @@ abstract class Form
 
   abstract public static function validate($attributes);
 
-  protected function throw()
+  public function throw()
   {
     ValidationException::throw($this->errors(), $this->attributes);
   }
@@ -22,7 +22,7 @@ abstract class Form
     return count($this->errors);
   }
 
-  public function errors()
+  protected function errors()
   {
     return $this->errors;
   }

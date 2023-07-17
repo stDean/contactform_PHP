@@ -212,3 +212,37 @@ small {
   visibility: visible;
   color: #e74a3c;
 }
+
+.general {
+  margin-top: 15px;
+}
+
+.general p {
+  visibility: hidden;
+  font-size: 14px;
+}
+
+.general.error p {
+  visibility: visible;
+  color: #e74a3c;
+}
+
+.general.error .exclaim {
+  visibility: visible;
+  color: #e74a3c;
+}
+
+.button input {
+  margin: 0;
+}
+
+.para a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: #265d;
+  margin-top: 15px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
