@@ -1,8 +1,6 @@
 const container = document.querySelector(".container");
 const showHidePwd = Array.from(document.querySelectorAll(".showHide"));
 const allPasswordFields = Array.from(document.querySelectorAll(".password"));
-const signUpText = document.querySelector(".signup-link");
-const loginText = document.querySelector(".login-link");
 const form = document.querySelector(".signUp");
 const userInput = document.querySelector("#user-input");
 const emailInput = document.querySelector("#email-input");
@@ -27,13 +25,4 @@ showHidePwd.forEach((ele) => {
       }
     });
   });
-});
-
-// adding active class to change the form from a login one to a register one and vice versa
-signUpText.addEventListener("click", () => {
-  container.classList.add("active");
-});
-
-loginText.addEventListener("click", () => {
-  container.classList.remove("active");
 });

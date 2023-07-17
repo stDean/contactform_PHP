@@ -4,7 +4,7 @@ require base_path('/views/partials/head.php');
 
 ?>
 
-<div class="container">
+<div class="container <?= urlIs('/register') ? "active" : "" ?>">
   <div class="forms">
     <div class="form login">
       <span class="title">LogIn</span>
@@ -37,7 +37,7 @@ require base_path('/views/partials/head.php');
 
       <div class="login-signup">
         <span class="text">Not a member?</span>
-        <a href="#" class="text signup-link">Create an Account.</a>
+        <a href="register" class="text signup-link">Create an Account.</a>
       </div>
     </div>
 
@@ -45,40 +45,48 @@ require base_path('/views/partials/head.php');
     <div class="form signup">
       <span class="title">Register</span>
 
-      <form action="#" class="signUp">
-        <div class="input-field">
+      <form action="/register" class="signUp" method="POST">
+        <div class="input-field <?= isset($errors['name']) ? 'error' : '' ?>">
           <input type="name" name="name" placeholder="Enter your Name" id="user-input">
           <i class="fa-regular fa-user"></i>
-          <i class="fa-regular fa-circle-check circle"></i>
-          <i class="fa-regular fa-circle-exclamation exclaim"></i>
+          <i class="fa-solid fa-circle-exclamation exclaim"></i>
 
-          <small class="error">This is the error</small>
+          <?php if (isset($errors['name'])) : ?>
+            <small class="error">
+              <?= $errors['name'] ?>
+            </small>
+          <?php endif ?>
         </div>
 
-        <div class="input-field">
+        <div class="input-field <?= isset($errors['email']) ? 'error' : '' ?>">
           <input type="email" name="email" placeholder="Enter your Email" id="email-input">
           <i class="fa-solid fa-envelope icon"></i>
-          <i class="fa-regular fa-circle-check circle"></i>
-          <i class="fa-regular fa-circle-exclamation exclaim"></i>
+          <i class="fa-solid fa-circle-exclamation exclaim"></i>
 
-          <small class="error">This is the error</small>
+          <?php if (isset($errors['email'])) : ?>
+            <small class="error">
+              <?= $errors['email'] ?>
+            </small>
+          <?php endif ?>
         </div>
 
-        <div class="input-field">
-          <input type="password" name="email" placeholder="Enter your password" class="password" id="pass-input">
+        <div class="input-field <?= isset($errors['password']) ? 'error' : '' ?>">
+          <input type="password" name="password" placeholder="Enter your password" class="password" id="pass-input">
           <i class="fa-solid fa-lock icon"></i>
-          <i class="fa-regular fa-circle-check circle"></i>
-          <i class="fa-regular fa-circle-exclamation exclaim"></i>
+          <i class="fa-solid fa-circle-exclamation exclaim"></i>
 
-          <small class="error">This is the error</small>
+          <?php if (isset($errors['password'])) : ?>
+            <small class="error">
+              <?= $errors['password'] ?>
+            </small>
+          <?php endif ?>
         </div>
 
         <div class="input-field">
-          <input type="password" name="email" placeholder="Confirm password" class="password" id="confirm-input">
+          <input type="password" name="cfPassword" placeholder="Confirm password" class="password" id="confirm-input">
           <i class="fa-solid fa-lock icon"></i>
           <i class="fa-regular fa-eye-slash showHide"></i>
-          <i class="fa-regular fa-circle-check circle"></i>
-          <i class="fa-regular fa-circle-exclamation exclaim"></i>
+          <i class="fa-solid fa-circle-exclamation exclaim"></i>
 
           <small class="error">This is the error</small>
         </div>
@@ -101,7 +109,7 @@ require base_path('/views/partials/head.php');
 
       <div class="login-signup">
         <span class="text">Have an Account?</span>
-        <a href="#" class="text login-link">Log in Now.</a>
+        <a href="/login" class="text login-link">Log in Now.</a>
       </div>
     </div>
   </div>

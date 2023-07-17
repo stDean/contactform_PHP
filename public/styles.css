@@ -199,16 +199,6 @@ small {
 
 
 /* Validation */
-
-.input-field.success input {
-  border-bottom-color: #2ecc71;
-}
-
-.input-field.success .circle {
-  visibility: visible;
-  color: #2ecc71;
-}
-
 .input-field.error input {
   border-bottom-color: #e74a3c;
 }
